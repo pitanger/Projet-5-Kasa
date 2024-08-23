@@ -17,7 +17,7 @@ const Etoiles = ({ rating }) => {
     );
   }
 
-  return <div>{etoiles}</div>;
+  return <div className="etoiles">{etoiles}</div>;
 };
 
 const Note = ({ id }) => {
@@ -28,7 +28,7 @@ const Note = ({ id }) => {
   }
 
   return (
-    <div>
+    <div className="conteneur-star">
       <Etoiles rating={logement.rating} /> 
     </div>
   );

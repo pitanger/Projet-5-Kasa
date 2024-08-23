@@ -1,8 +1,9 @@
 import React from "react";
 import Collapse from "../Components/collapse.jsx";
 import FiltresLogements from './filtre.jsx';
+import Note from "./noteetoile.jsx";
 
-const Caroussel = ({ text, cover, images, description, nomhost, pichost, note, lieu, equipement, filtres }) => {
+const Caroussel = ({ id, text, cover, images, description, nomhost, pichost, note, lieu, equipement, filtres }) => {
     return (
         <div className="Container-caroussel">
             <img src={cover} alt=""></img>
@@ -27,7 +28,7 @@ const Caroussel = ({ text, cover, images, description, nomhost, pichost, note, l
                     <FiltresLogements tags={filtres} />
                 </div>
                 <div className="note">
-                    {/* La note doit venir ici */}
+                    <Note id={id} />
                 </div>
             </div>
             <div className="descri-et-equipement">

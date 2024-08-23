@@ -15,7 +15,7 @@ const Logement = () => {
           <Navigation />
         </header>
         {Data.map((logement) => (
-        <Caroussel  key={logement.id}
+        <Caroussel  id={logement.id}
                     text={logement.title} 
                     cover={logement.cover} 
                     images={logement.pictures} 

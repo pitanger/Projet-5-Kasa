@@ -20,7 +20,14 @@ const Collapse = ({ nom, contenu }) => {
             </div>
             {ferme && (
                 <div className="collapse-content">
-                    <p>{contenu}</p>
+{/* Les 6 lignes suivantes vérifient si Collapse est un tableau (Array) et renvoient un contenu mapé sous forme de tableau si c'est le cas, sinon le texte s'affiche normalement */}
+                    {Array.isArray(contenu) ? (
+                        contenu.map((item, index) => (
+                            <p key={index} className="collapse-item">{item}</p>
+                        ))
+                    ) : (
+                        <p>{contenu}</p>
+                    )}
                 </div>
             )}
         </div>

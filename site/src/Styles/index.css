@@ -276,3 +276,15 @@ main {
   font-size: 14px;
   font-weight: 700;
 }
+
+.conteneur-star {
+  text-align: right;
+  transform: scale(2, 2);
+  overflow: hidden;
+  margin-right: 45px;
+}
+
+.filtres-et-note {
+  display: flex;
+  flex-wrap: wrap;
+}
