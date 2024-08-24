@@ -1,14 +1,12 @@
 import React from "react";
-import background from '../images/Maskgroup.png';
 
-
-const Banniere = () => {
+const Banniere = ({ text, image }) => {
     return (
         <div className="banner-wrap">
-          <img src={background} className="background" alt="vue rochers" />
-          <div className="banner-text">Chez vous, partout et ailleurs</div>
+            <img src={image} className="background" alt="Bannière" />
+            {text && <div className="banner-text">{text}</div>}
         </div>
     );
 }
 
-export default Banniere
+export default Banniere;

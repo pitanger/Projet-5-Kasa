@@ -6,7 +6,7 @@ const Flexbox = () => {
   return (
     <div className="flexbox">
       {Data.map((logement) => (
-        <Box key={logement.id} text={logement.title} cover={logement.cover} />
+        <Box key={logement.id} id={logement.id} text={logement.title} cover={logement.cover} />
       ))}
     </div>
   );

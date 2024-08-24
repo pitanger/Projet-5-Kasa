@@ -23,10 +23,6 @@ const Etoiles = ({ rating }) => {
 const Note = ({ id }) => {
   const logement = Data.find(item => item.id === id);
 
-  if (!logement) {
-    return <div>Logement non trouvé</div>;
-  }
-
   return (
     <div className="conteneur-star">
       <Etoiles rating={logement.rating} /> 

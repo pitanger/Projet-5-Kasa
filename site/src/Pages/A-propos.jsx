@@ -2,8 +2,9 @@ import React from "react";
 import Navigation from "../Components/nav";
 import Footer from "../Components/footer";
 import Logo from "../Components/logo";
-import Banniere2 from "../Components/banniere2";
+import Banniere from "../Components/banniere";
 import Collapse from "../Components/collapse";
+import background2 from '../images/fond2.png';
 
 const Apropos = () => {
     return (
@@ -13,7 +14,7 @@ const Apropos = () => {
             <Logo />
             <Navigation />
           </header>
-            <Banniere2 /> 
+            <Banniere image={background2}/> 
             <div className="conteneur-collapse">
             <Collapse nom="Fiabilité" contenu="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont confirmes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes." />
             <Collapse nom="Respect" contenu="La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme." />
