@@ -44,7 +44,7 @@ const Caroussel = ({ id, text, cover, images = [], description, nomhost, pichost
                     <div className="nom-personne">
                         {nomhost?.split(" ").map((prenom, index) => (
                             <span key={index}>{prenom}<br /></span>
-                        ))};
+                        ))}
                     </div>
                     <div className="photo-personne">
                         <img src={pichost} alt="Hôte" />
