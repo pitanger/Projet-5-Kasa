@@ -26,10 +26,15 @@ const router = createBrowserRouter([
     element: <Logement />,
   },
   {
+    path: "/404", // Assurez-vous que la route 404 est correctement définie
+    element: <Erreur />,
+  },
+  {
     path: "*",
     element: <Erreur />,
   },
 ]);
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

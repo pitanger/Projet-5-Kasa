@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Collapse from "../Components/collapse.jsx";
-import FiltresLogements from './filtre.jsx';
-import Note from "./noteetoile.jsx";
 
-const Caroussel = ({ id, text, cover, images = [], description, nomhost, pichost, note, lieu, equipement = [], filtres = [] }) => {
+
+const Caroussel = ({ cover, images = [] }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     // inititialisation du useState à 0
 
@@ -33,35 +31,8 @@ const Caroussel = ({ id, text, cover, images = [], description, nomhost, pichost
                     </>
                 ) : (
                     <img src={cover} alt="Logement" />
+                    // Affiche l'image de cover quand l'index est à 0, sinon affiche les autres
                 )}
-            </div>
-            <div className="titre-et-personne">
-                <div className="titre-et-sous-titre">
-                    <div className="titre">{text}</div>
-                    <div className="sous-titre">{lieu}</div>
-                </div>
-                <div className="personne">
-                    <div className="nom-personne">
-                        {nomhost?.split(" ").map((prenom, index) => (
-                            <span key={index}>{prenom}<br /></span>
-                        ))}
-                    </div>
-                    <div className="photo-personne">
-                        <img src={pichost} alt="Hôte" />
-                    </div>
-                </div>
-            </div>
-            <div className="filtres-et-note">
-                <div className="filtres">
-                    <FiltresLogements tags={filtres} />
-                </div>
-                <div className="note">
-                    <Note id={id} />
-                </div>
-            </div>
-            <div className="descri-et-equipement">
-                <Collapse nom="Description" contenu={description} />
-                <Collapse nom="Équipements" contenu={equipement.join(', ')} />
             </div>
         </div>
     );
