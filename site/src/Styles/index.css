@@ -172,14 +172,69 @@ main {
   cursor: pointer;
 }
 
-.Container-caroussel {
-  width: 100%;
-  aspect-ratio: 1/0.34;
+.caroussel-images > img {
+  object-fit: cover;
+  height: 500px;
+  border-radius: 25px;
+  transition: transform 0.6s ease-in-out;
+  width:100%;
 }
 
-.Container-caroussel > img {
-  object-fit: fill;
-  width:100%;
+.transition {
+  transform: translateX(-100%);
+}
+
+button {
+  position: relative;
+  border: 0;
+  background-color: transparent;
+  transform: scale(8, 8);
+  color: white;
+  padding:0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.left-arrow{
+  left: 6%;
+  top: 250px;
+  z-index: 10;
+}
+
+.right-arrow{
+  left: 94%;
+  bottom: 250px;
+  z-index: 10;
+}
+
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+
+.carousel-image-container {
+  display: flex;
+  width: 100%;
+}
+
+.carousel-image {
+  min-width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+.Container-caroussel, .filtres, .titre-et-sous-titre, .descri-et-equipement {
+  margin: 10px 0 10px 0;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .descri-et-equipement {
@@ -190,13 +245,6 @@ main {
 
 .descri-et-equipement > .collapse {
   width: 45%;
-}
-
-.Container-caroussel, .titre-et-sous-titre, .filtres-et-note, .descri-et-equipement {
-  margin: 10px 0 10px 0;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  flex-direction: row;
 }
 
 .titre-et-personne {
@@ -237,13 +285,6 @@ main {
   transform: scaleY(0.9);
 }
 
-.personne {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-}
-
 .nom-personne {
   font-weight: 500;
   font-size: 18px;
@@ -252,6 +293,11 @@ main {
   transform: scaleY(0.9);
   text-align: right;
   line-height: 170%;
+}
+
+.personne {
+  display: flex;
+  gap: 1em;
 }
 
 .conteneur-filtre {
@@ -271,51 +317,66 @@ main {
 
 .conteneur-star {
   text-align: right;
-  transform: scale(2, 2);
+  transform: scale(1.5, 1.5) translateX(-20%);
   overflow: hidden;
-  margin-right: 45px;
 }
 
-.filtres-et-note {
+svg {
+margin: 0 5px 0 5px}
+
+.note-host {
   display: flex;
-  flex-wrap: wrap;
-}
-
-button {
-  position: relative;
-  border: 0;
-  background-color: transparent;
-  transform: scale(8, 8);
-  color: white;
-  bottom: 270px;
-  padding:0
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-.prev-button{
-  left: 4%;
-}
-
-.next-button{
-  left: 95%;
-}
-
-.caroussel-images > img {
-  object-fit: cover;
-  height: 500px;
-  border-radius: 25px;
-  width: 100%;
-  transition-property: right;
-  transition-duration: 3s;
-}
-
-.caroussel-images {
-  transition: opacity 0.6s ease-in-out;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
 .collapse-item {
   line-height: 10px;
+}
+
+.Logement-gauche {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  display: inline-block;
+  width:60%
+
+}
+
+.Logement-droite  {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  width:40%
+}
+
+.contenu-autre {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 578px) {
+
+.contenu-autre {
+  flex-direction: column;
+}
+
+.Logement-gauche {
+  width: 100%;
+}
+
+.Logement-droite {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.note-host {
+  flex-direction: row-reverse;
+  width: 100%;
+}
+
+.conteneur-star {
+  transform: translateX(0);
+}
+
 }

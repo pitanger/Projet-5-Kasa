@@ -1,41 +1,51 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-
-const Caroussel = ({ cover, images = [] }) => {
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    // inititialisation du useState à 0
-
-    const nextImage = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    };
-
-    const prevImage = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-    };
-    // https://dev.to/ranewallin/this-simple-math-hack-lets-you-create-an-image-carousel-without-any-if-statements-5chj : créer un caroussel avec le modulo operator => commentaire de André
+const ImageCarousel = ({ images }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
-        const intervalId = setInterval(nextImage, 3000);
-        return () => clearInterval(intervalId);
-        }, 
-    );
+        const interval = setInterval(() => {
+            goToNext();
+        }, 3000); 
+        return () => clearInterval(interval);
+    }, [currentIndex]);
+
+    const goToPrevious = () => {
+        const isFirstSlide = currentIndex === 0;
+        const newIndex = isFirstSlide ? images.length - 1 : currentIndex - 1;
+        setCurrentIndex(newIndex);
+    };
+
+    const goToNext = () => {
+        const isLastSlide = currentIndex === images.length - 1;
+        const newIndex = isLastSlide ? 0 : currentIndex + 1;
+        setCurrentIndex(newIndex);
+    };
 
     return (
-        <div className="container-caroussel">
-            <div className="caroussel-images">
-                {images.length > 0 ? (
-                    <>
-                        <img src={images[currentImageIndex]} alt="Logement" />
-                        <button className="prev-button" onClick={prevImage}>&#10094;</button>
-                        <button className="next-button" onClick={nextImage}>&#10095;</button>
-                    </>
-                ) : (
-                    <img src={cover} alt="Logement" />
-                    // Affiche l'image de cover quand l'index est à 0, sinon affiche les autres
-                )}
+        <div className="carousel-container">
+            <div className="carousel">
+                <button className="left-arrow" onClick={goToPrevious}>❮</button>
+                <div 
+                    className="carousel-image-container" 
+                    style={{ 
+                        transform: `translateX(-${currentIndex * 100}%)`, 
+                        transition: 'transform 0.5s ease-in-out'
+                    }}
+                >
+                    {images.map((image, index) => (
+                        <img 
+                            key={index} 
+                            src={image} 
+                            alt={`Slide ${index}`} 
+                            className="carousel-image" 
+                        />
+                    ))}
+                </div>
+                <button className="right-arrow" onClick={goToNext}>❯</button>
             </div>
         </div>
     );
 };
 
-export default Caroussel;
+export default ImageCarousel;
