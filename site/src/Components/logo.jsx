@@ -3,7 +3,9 @@ import logo from '../images/logo.png';  // Assurez-vous que le chemin vers l'ima
 
 const Logo = () => {
     return (
+        <div className="conteneur-logo">
         <img src={logo} className="logo" alt="logo Kasa" />
+        </div>
     );
 }
 
