@@ -44,6 +44,9 @@ const ImageCarousel = ({ images }) => {
                     ))}
                 </div>
                 <button className="carousel__right-arrow" onClick={goToNext}>❯</button>
+                <div className="carousel__page-indicator">
+                    {`${currentIndex + 1} / ${images.length}`}
+                </div>
             </div>
         </div>
         </div>

@@ -7,6 +7,9 @@ body
 code
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace
 
+a
+  text-decoration: none
+
 header
   width: 100%
   height: 68px
@@ -15,7 +18,7 @@ header
   justify-content: space-between
   align-content: center
 
-  .header__navigation
+  .navigation
     display: flex
     flex-direction: row
     width: 250px
@@ -25,40 +28,27 @@ header
     gap: 1em
     justify-content: flex-end
 
+    &__nav-item
+      cursor: pointer
+      text-decoration: none
+      color: black
+
+      &.active
+        text-decoration: underline
+        cursor: default
+
+      &.visited
+        text-decoration: none
+
   .header__logo-container
     display: flex
     flex-wrap: wrap
     flex-direction: row
     width: 30%
 
-  .header__nav-item
-    cursor: pointer
-    text-decoration: none
-
-  .header__nav-item--active
-    text-decoration: underline
-    cursor: default
-
 .main, main
   border: solid 1px black
   padding: 40px 80px 40px 80px
-
-  &__background
-    object-fit: cover
-    height: 200px
-    border-radius: 25px
-    margin: 0 0 50px 0
-    width: 100%
-    filter: brightness(50%)
-
-  &__banner-text
-    position: absolute
-    top: 24%
-    left: 50%
-    transform: translate(-50%, -50%)
-    font-size: 3vw
-    font-weight: 700
-    color: #ffffff
 
   &__flexbox
     width: 100%
@@ -76,7 +66,28 @@ header
       aspect-ratio: 1 / 1
       border-radius: 10px
 
-  .main__box-text
+.banner
+  &__background
+    object-fit: cover
+    height: 200px
+    border-radius: 25px
+    margin: 0 0 50px 0
+    width: 100%
+    filter: brightness(50%)
+
+  &__text
+    position: absolute
+    top: 24%
+    left: 50%
+    transform: translate(-50%, -50%)
+    font-size: 3vw
+    font-weight: 700
+    color: #ffffff
+    text-align: center
+
+.box
+
+  &__text
     position: relative
     left: 2%
     top: 82%
@@ -93,7 +104,7 @@ header
   align-items: center
   flex-direction: column
   height: 169px
-  font-size: 24px
+  font-size: 22px
   padding-top: 40px
 
 .collapse
@@ -135,17 +146,15 @@ header
 
   &__AOA
     color: #ff6060
-    font-size: 261px
+    font-size: 265px
     font-weight: 700
     font-family: sans-serif
     transform: scaleY(0.8)
 
   &__oups
     color: #ff6060
-    font-size: 36px
-    display: flex
-    flex-wrap: wrap
-    justify-content: center
+    font-size: 32px
+    text-align: center
 
   &__retour
     text-decoration: underline
@@ -155,9 +164,6 @@ header
 
     &:hover
       cursor: pointer
-
-.carousel__transition
-  transform: translateX(-100%)
 
 button
   position: relative
@@ -197,6 +203,15 @@ button
     height: 500px
     object-fit: cover
     border-radius: 25px
+
+  &__page-indicator
+    position: absolute
+    bottom: 30px
+    left: 50%
+    transform: translateX(-50%)
+    color: white
+    font-size: 18px
+    z-index: 3
 
 .filtres, .title-and-subtitle, .descri-et-equipement
   margin: 10px 0 10px 0
@@ -241,6 +256,12 @@ button
     color: black
     transform: scaleY(0.9)
 
+.title-and-person
+
+  &__person
+    display: flex
+    gap: 1em
+
   &__name
     font-weight: 500
     font-size: 18px
@@ -249,10 +270,6 @@ button
     transform: scaleY(0.9)
     text-align: right
     line-height: 170%
-
-.title-and-person__person
-  display: flex
-  gap: 1em
 
 .filter
 
@@ -271,11 +288,11 @@ button
 
 .rating__container
   text-align: right
-  transform: scale(1.5, 1.5) translateX(-20%)
+  transform: scale(1.5, 1.5) translateX(-5%)
   overflow: hidden
 
   svg
-    margin: 0 5px 0 5px
+    margin: 0 2px 0 2px
 
 .host__note
   display: flex
@@ -307,7 +324,12 @@ button
 
   main
     border: solid 1px black
-    padding: 10px 20px 10px 20px
+    padding: 0 20px 10px 20px
+
+  .banner
+
+    &__text
+      font-size: 8vw
 
   .accommodation__content
     flex-direction: column
@@ -315,9 +337,12 @@ button
   .conteneur
     width: 40%
 
-  .header__navigation
+  .navigation
     justify-content: space-evenly
     width: 60%
+
+    a
+      font-size: 19px
 
   .accommodation__left
     width: 100%
@@ -333,21 +358,46 @@ button
   .rating__container
     transform: translateX(0)
 
-  .AOA
-    font-size: 200px
+  .wrapper-404
+    height: 800px
+    display: flex
+    justify-content: space-evenly
+
+    &__AOA
+      font-size: 160px
 
   .logo
     transform: scale(0.5, 0.5) translate(-50%)
 
-  .main__flexbox > div
-    margin: 10px
-    width: 95%
+  .main
+    padding: 0 20px 0 20px
 
-  .main__box-text
-    font-size: 2.5vw
+    &__flexbox
+      padding: 0
+
+      > div
+        margin: 0 0 15px 0
+        width: 100%
+        aspect-ratio: 1 / 0.76
+
+  .box
+
+    &__text
+      font-size: 4vw
 
   button
     transform: scale(4, 4)
 
   .descri-et-equipement > .collapse__item
     width: 100%
+
+  .collapse
+
+    &__item
+
+      width: 100%
+
+  .carousel
+
+    &__page-indicator
+      display: none
