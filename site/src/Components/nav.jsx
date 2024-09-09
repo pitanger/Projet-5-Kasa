@@ -2,10 +2,10 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
-    const location = useLocation();  // pour obtenir le chemin de la page actuelle
+    const location = useLocation();
 
     return (
-        <span className="navigation">
+        <span className="header__navigation">
             <Link
                 to="/"
                 className={`nav-item ${location.pathname === "/" ? "active" : ""}`}
@@ -15,7 +15,7 @@ const Navigation = () => {
             </Link>
             <Link
                 to="/a-propos"
-                className={`nav-item ${location.pathname === "/a-propos" ? "active" : ""}`}
+                className={`header__nav-item ${location.pathname === "/a-propos" ? "active" : ""}`}
                 style={{ pointerEvents: location.pathname === "/a-propos" ? "none" : "auto" }}
             >
                 A Propos

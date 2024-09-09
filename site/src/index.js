@@ -4,7 +4,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import './Styles/index.css';
+import './Styles/index.sass';
 import Accueil from './Pages/Accueil.jsx';
 import Apropos from './Pages/A-propos.jsx';
 import Erreur from './Pages/404.jsx';
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
     element: <Logement />,
   },
   {
-    path: "/404", // Assurez-vous que la route 404 est correctement définie
+    path: "/404",
     element: <Erreur />,
   },
   {

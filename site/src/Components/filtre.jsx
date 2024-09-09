@@ -2,9 +2,9 @@ import React from 'react';
 
 const FiltresLogements = ({ tags }) => {
   return (
-    <div className="conteneur-filtre">
+    <div className="filter__container">
       {tags.map((tag, index) => (
-        <span key={index} className="filtre">
+        <span key={index} className="filter__item">
           {tag}
         </span>
       ))}

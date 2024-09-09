@@ -1,0 +1,353 @@
+body
+  margin: 0
+  font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+code
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace
+
+header
+  width: 100%
+  height: 68px
+  margin-bottom: 20px
+  display: flex
+  justify-content: space-between
+  align-content: center
+
+  .header__navigation
+    display: flex
+    flex-direction: row
+    width: 250px
+    font-size: 22px
+    font-weight: 500
+    align-self: center
+    gap: 1em
+    justify-content: flex-end
+
+  .header__logo-container
+    display: flex
+    flex-wrap: wrap
+    flex-direction: row
+    width: 30%
+
+  .header__nav-item
+    cursor: pointer
+    text-decoration: none
+
+  .header__nav-item--active
+    text-decoration: underline
+    cursor: default
+
+.main, main
+  border: solid 1px black
+  padding: 40px 80px 40px 80px
+
+  &__background
+    object-fit: cover
+    height: 200px
+    border-radius: 25px
+    margin: 0 0 50px 0
+    width: 100%
+    filter: brightness(50%)
+
+  &__banner-text
+    position: absolute
+    top: 24%
+    left: 50%
+    transform: translate(-50%, -50%)
+    font-size: 3vw
+    font-weight: 700
+    color: #ffffff
+
+  &__flexbox
+    width: 100%
+    height: auto
+    display: flex
+    flex-wrap: wrap
+    background-color: #f6f6f6
+    border-radius: 25px
+    justify-content: center
+    padding: 20px 0 20px 0
+
+    > div
+      margin: 20px
+      width: 29%
+      aspect-ratio: 1 / 1
+      border-radius: 10px
+
+  .main__box-text
+    position: relative
+    left: 2%
+    top: 82%
+    font-size: 1.5vw
+    color: #ffffff
+    text-shadow: 0 0 2px #000
+
+.footer
+  background-color: black
+  width: 100%
+  color: #ffffff
+  display: flex
+  justify-content: space-evenly
+  align-items: center
+  flex-direction: column
+  height: 169px
+  font-size: 24px
+  padding-top: 40px
+
+.collapse
+
+  &__container
+    justify-content: center
+    display: flex
+    flex-wrap: wrap
+
+  &__item
+    border-radius: 12px
+    background-color: #ff6060
+    width: 80%
+    margin: 10px 0
+    overflow: hidden
+
+  &__click
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 0 20px 0 10px
+    color: white
+    cursor: pointer
+    font-weight: 700
+
+  &__content
+    background-color: #f6f6f6
+    font-size: 18px
+    padding-left: 10px
+    overflow: hidden
+    border-radius: 0 0 10px 10px
+
+.wrapper-404
+  justify-content: center
+  display: flex
+  flex-wrap: wrap
+  flex-direction: column
+  align-items: center
+
+  &__AOA
+    color: #ff6060
+    font-size: 261px
+    font-weight: 700
+    font-family: sans-serif
+    transform: scaleY(0.8)
+
+  &__oups
+    color: #ff6060
+    font-size: 36px
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+
+  &__retour
+    text-decoration: underline
+    font-size: 18px
+    font-weight: 500
+    margin: 80px 0 80px 0
+
+    &:hover
+      cursor: pointer
+
+.carousel__transition
+  transform: translateX(-100%)
+
+button
+  position: relative
+  border: 0
+  background-color: transparent
+  transform: scale(8, 8)
+  color: white
+  padding: 0
+
+  &:hover
+    cursor: pointer
+
+.carousel
+
+  &__left-arrow
+    left: 6%
+    top: 271px
+    z-index: 10
+
+  &__right-arrow
+    left: 94%
+    bottom: 250px
+    z-index: 10
+
+  &__container
+    position: relative
+    width: 100%
+    margin: auto
+    overflow: hidden
+
+  &__image-container
+    display: flex
+    width: 100%
+
+  &__image
+    min-width: 100%
+    height: 500px
+    object-fit: cover
+    border-radius: 25px
+
+.filtres, .title-and-subtitle, .descri-et-equipement
+  margin: 10px 0 10px 0
+  flex-wrap: wrap
+  justify-content: space-between
+  flex-direction: row
+
+.descri-et-equipement
+  display: flex
+  flex-wrap: wrap
+  align-items: flex-start
+
+  > .collapse__item
+    width: 45%
+
+.title-and-person__photo
+  border-radius: 50%
+  border: 1px solid black
+  height: 64px
+  width: 64px
+
+  img
+    height: 100%
+    width: 100%
+    object-fit: cover
+    border-radius: 50%
+
+.title-and-subtitle
+
+  &__title
+    font-weight: 500
+    font-size: 36px
+    font-family: sans-serif
+    color: #ff6060
+    transform: scaleY(0.9)
+    margin: 0 0 10px 0
+
+  &__subtitle
+    font-weight: 500
+    font-size: 18px
+    font-family: sans-serif
+    color: black
+    transform: scaleY(0.9)
+
+  &__name
+    font-weight: 500
+    font-size: 18px
+    font-family: sans-serif
+    color: #ff6060
+    transform: scaleY(0.9)
+    text-align: right
+    line-height: 170%
+
+.title-and-person__person
+  display: flex
+  gap: 1em
+
+.filter
+
+  &__container
+    display: flex
+    gap: 10px
+    flex-wrap: wrap
+
+  &__item
+    background-color: #ff6060
+    color: #ffffff
+    padding: 5px 10px
+    border-radius: 20px
+    font-size: 14px
+    font-weight: 700
+
+.rating__container
+  text-align: right
+  transform: scale(1.5, 1.5) translateX(-20%)
+  overflow: hidden
+
+  svg
+    margin: 0 5px 0 5px
+
+.host__note
+  display: flex
+  justify-content: space-around
+  flex-direction: column
+  align-items: center
+
+.collapse-item
+  line-height: 10px
+
+.accommodation__left
+  display: flex
+  flex-wrap: wrap
+  justify-content: start
+  display: inline-block
+  width: 60%
+
+.accommodation__right
+  display: flex
+  flex-wrap: wrap
+  justify-content: end
+  width: 40%
+
+.accommodation__content
+  display: flex
+  justify-content: space-between
+
+@media (max-width: 578px)
+
+  main
+    border: solid 1px black
+    padding: 10px 20px 10px 20px
+
+  .accommodation__content
+    flex-direction: column
+
+  .conteneur
+    width: 40%
+
+  .header__navigation
+    justify-content: space-evenly
+    width: 60%
+
+  .accommodation__left
+    width: 100%
+
+  .accommodation__right
+    width: 100%
+    justify-content: space-between
+
+  .host__note
+    flex-direction: row-reverse
+    width: 100%
+
+  .rating__container
+    transform: translateX(0)
+
+  .AOA
+    font-size: 200px
+
+  .logo
+    transform: scale(0.5, 0.5) translate(-50%)
+
+  .main__flexbox > div
+    margin: 10px
+    width: 95%
+
+  .main__box-text
+    font-size: 2.5vw
+
+  button
+    transform: scale(4, 4)
+
+  .descri-et-equipement > .collapse__item
+    width: 100%

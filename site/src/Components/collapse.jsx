@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Collapse = ({ nom, contenu }) => {
     const [ferme, ouvert] = useState(false);
-    const contentRef = useRef(null); // Référence pour accéder à la hauteur du contenu
-    const [height, setHeight] = useState("0px"); // État pour gérer la hauteur
+    const contentRef = useRef(null);
+    const [height, setHeight] = useState("0px");
 
     const ouvreferme = () => {
         ouvert(!ferme);
@@ -22,13 +22,13 @@ const Collapse = ({ nom, contenu }) => {
     const uparrow = <FontAwesomeIcon icon={faAngleUp} />;
 
     return (
-        <div className={`collapse ${ferme ? "ouvert" : ""}`}>
-            <div className="collapse-click" onClick={ouvreferme}>
+        <div className={`collapse__item ${ferme ? "ouvert" : ""}`}>
+            <div className="collapse__click" onClick={ouvreferme}>
                 <p>{nom}</p>
-                <span className="collapse-icon">{ferme ? uparrow : downarrow}</span>
+                <span>{ferme ? uparrow : downarrow}</span>
             </div>
             <div
-                className="collapse-content"
+                className="collapse__content"
                 ref={contentRef}
                 style={{
                     maxHeight: height,
@@ -39,7 +39,7 @@ const Collapse = ({ nom, contenu }) => {
                 {/* Les 6 lignes suivantes vérifient si Collapse est un tableau (Array) et renvoient un contenu mapé sous forme de tableau si c'est le cas, sinon le texte s'affiche normalement */}
                 {Array.isArray(contenu) ? (
                     contenu.map((item, index) => (
-                        <p key={index} className="collapse-item">
+                        <p key={index} className="collapse__content__item">
                             {item}
                         </p>
                     ))

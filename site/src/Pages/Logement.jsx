@@ -48,20 +48,20 @@ const Logement = () => {
             filtres={logement.tags}
           />
         </div>
-        <div className="contenu-autre">
-          <div className="Logement-gauche">
-            <div className="titre-et-sous-titre">
-              <div className="titre">{logement.title}</div>
-              <div className="sous-titre">{logement.location}</div>
+        <div className="accommodation__content">
+          <div className="accommodation__left">
+            <div className="title-and-subtitle">
+              <div className="title-and-subtitle__title">{logement.title}</div>
+              <div className="title-and-subtitle__subtitle">{logement.location}</div>
             </div>
             <div className="filtres">
               <FiltresLogements tags={logement.tags} />
             </div>
           </div>
-          <div className="Logement-droite">
-            <div className="note-host">
-            <div className="personne">
-                <div className="nom-personne">
+          <div className="accommodation__right">
+            <div className="host__note">
+            <div className="title-and-person__person">
+                <div className="title-and-person__name">
                   {logement.host.name.split(" ").map((prenom, index) => (
                     <span key={index}>
                       {prenom}
@@ -69,7 +69,7 @@ const Logement = () => {
                     </span>
                   ))}
                 </div>
-                <div className="photo-personne">
+                <div className="title-and-person__photo">
                   <img src={logement.host.picture} alt="Hôte" />
                 </div>
               </div>

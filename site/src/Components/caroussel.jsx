@@ -8,7 +8,7 @@ const ImageCarousel = ({ images }) => {
             goToNext();
         }, 3000); 
         return () => clearInterval(interval);
-    }, [currentIndex]);
+    });
 
     const goToPrevious = () => {
         const isFirstSlide = currentIndex === 0;
@@ -23,11 +23,12 @@ const ImageCarousel = ({ images }) => {
     };
 
     return (
-        <div className="carousel-container">
+        <div className='carousel'>
+        <div className="carousel__container">
             <div className="carousel">
-                <button className="left-arrow" onClick={goToPrevious}>❮</button>
+                <button className="carousel__left-arrow" onClick={goToPrevious}>❮</button>
                 <div 
-                    className="carousel-image-container" 
+                    className="carousel__image-container" 
                     style={{ 
                         transform: `translateX(-${currentIndex * 100}%)`, 
                         transition: 'transform 0.5s ease-in-out'
@@ -38,12 +39,13 @@ const ImageCarousel = ({ images }) => {
                             key={index} 
                             src={image} 
                             alt={`Slide ${index}`} 
-                            className="carousel-image" 
+                            className="carousel__image" 
                         />
                     ))}
                 </div>
-                <button className="right-arrow" onClick={goToNext}>❯</button>
+                <button className="carousel__right-arrow" onClick={goToNext}>❯</button>
             </div>
+        </div>
         </div>
     );
 };

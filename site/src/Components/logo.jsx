@@ -1,9 +1,9 @@
 import React from 'react';
-import logo from '../images/logo.png';  // Assurez-vous que le chemin vers l'image est correct
+import logo from '../images/logo.png';
 
 const Logo = () => {
     return (
-        <div className="conteneur-logo">
+        <div className="header__logo-container">
         <img src={logo} className="logo" alt="logo Kasa" />
         </div>
     );

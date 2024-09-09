@@ -9,8 +9,8 @@ import background from '../images/fond1.png';
 const Accueil = () => {
   return (
     <div className="Index">
-      <main>
-        <header className="Accueil-header">
+      <main className="main">
+        <header>
           <Logo />
           <Navigation />
         </header>

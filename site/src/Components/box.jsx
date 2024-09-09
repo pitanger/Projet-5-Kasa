@@ -16,7 +16,7 @@ const Box = ({ id, text, cover }) => {
     <div className="Box-container">
       <Link to={`/logement/${id}`}>
         <div className="Box" style={Boxbackground}>
-          <div className="box-text">{text}</div>
+          <div className="main__box-text">{text}</div>
         </div>
       </Link>
     </div>

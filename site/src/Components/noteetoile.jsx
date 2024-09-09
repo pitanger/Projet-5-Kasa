@@ -24,7 +24,7 @@ const Note = ({ id }) => {
   const logement = Data.find(item => item.id === id);
 
   return (
-    <div className="conteneur-star">
+    <div className="rating__container">
       <Etoiles rating={logement.rating} /> 
     </div>
   );

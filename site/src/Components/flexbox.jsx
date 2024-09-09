@@ -4,7 +4,7 @@ import Data from "./data.jsx";
 
 const Flexbox = () => {
   return (
-    <div className="flexbox">
+    <div className="main__flexbox">
       {Data.map((logement) => (
         <Box key={logement.id} id={logement.id} text={logement.title} cover={logement.cover} />
       ))}
