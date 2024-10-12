@@ -1,9 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import './Styles/index.sass';
 import Accueil from './Pages/Accueil.jsx';
 import Apropos from './Pages/A-propos.jsx';
@@ -12,7 +9,7 @@ import Logement from './Pages/Logement.jsx';
 
 import reportWebVitals from './reportWebVitals.js';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Accueil />,
@@ -34,8 +31,6 @@ const router = createBrowserRouter([
     element: <Erreur />,
   },
 ]);
-
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
