@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Projet-5-Kasa/static/css/main.105a026f.css",
+    "main.js": "/Projet-5-Kasa/static/js/main.b01a6fc2.js",
+    "static/js/453.adc34edb.chunk.js": "/Projet-5-Kasa/static/js/453.adc34edb.chunk.js",
+    "static/media/fond2.png": "/Projet-5-Kasa/static/media/fond2.640955dab8c7bff25514.png",
+    "static/media/fond1.png": "/Projet-5-Kasa/static/media/fond1.19221376a0aa2549c135.png",
+    "index.html": "/Projet-5-Kasa/index.html",
+    "main.105a026f.css.map": "/Projet-5-Kasa/static/css/main.105a026f.css.map",
+    "main.b01a6fc2.js.map": "/Projet-5-Kasa/static/js/main.b01a6fc2.js.map",
+    "453.adc34edb.chunk.js.map": "/Projet-5-Kasa/static/js/453.adc34edb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.105a026f.css",
+    "static/js/main.b01a6fc2.js"
+  ]
+}
